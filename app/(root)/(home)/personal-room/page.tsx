@@ -59,9 +59,9 @@ const PersonalRoom = () => {
     <section className="flex size-full flex-col gap-10 text-white">
       <h1 className="text-xl font-bold lg:text-3xl">Личный конференц-зал</h1>
       <div className="flex w-full flex-col gap-8 xl:max-w-[900px]">
-        <Table title="Topic" description={`${user?.username}'s Meeting Room`} />
-        <Table title="Meeting ID" description={meetingId!} />
-        <Table title="Invite Link" description={meetingLink} />
+        <Table title="Тема" description={`${user?.username}'s Meeting Room`} />
+        <Table title="ID встречи" description={meetingId!} />
+        <Table title="Ссылка-приглашение" description={meetingLink} />
       </div>
       <div className="flex gap-5">
         <Button className="bg-blue-1" onClick={startRoom}>
@@ -76,7 +76,7 @@ const PersonalRoom = () => {
             });
           }}
         >
-          Копирвать приглашение
+          Копировать приглашение
         </Button>
       </div>
     </section>
