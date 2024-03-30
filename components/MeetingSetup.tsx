@@ -47,14 +47,14 @@ const MeetingSetup = ({
   if (callTimeNotArrived)
     return (
       <Alert
-        title={`Your Meeting has not started yet. It is scheduled for ${callStartsAt.toLocaleString()}`}
+        title={`Ваша встреча ещё не началась. Она запланирована на${callStartsAt.toLocaleString()}`}
       />
     );
 
   if (callHasEnded)
     return (
       <Alert
-        title="The call has been ended by the host"
+        title="Звонок был завершён ведущим"
         iconUrl="/icons/call-ended.svg"
       />
     );
@@ -70,7 +70,7 @@ const MeetingSetup = ({
             checked={isMicCamToggled}
             onChange={(e) => setIsMicCamToggled(e.target.checked)}
           />
-          Присоединиться с выключенным микрофоном
+          Присоединиться с выключенным микрофоном и камерой
         </label>
         <DeviceSettings />
       </div>
