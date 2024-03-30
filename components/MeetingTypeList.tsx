@@ -43,7 +43,7 @@ const MeetingTypeList = () => {
       if (!call) throw new Error('Failed to create meeting');
       const startsAt =
         values.dateTime.toISOString() || new Date(Date.now()).toISOString();
-      const description = values.description || 'Instant Meeting';
+      const description = values.description || 'Мгновенная встреча';
       await call.getOrCreate({
         data: {
           starts_at: startsAt,
@@ -57,11 +57,11 @@ const MeetingTypeList = () => {
         router.push(`/meeting/${call.id}`);
       }
       toast({
-        title: 'Meeting Created',
+        title: 'Встреча создана',
       });
     } catch (error) {
       console.error(error);
-      toast({ title: 'Failed to create Meeting' });
+      toast({ title: 'Что-то пошло не так' });
     }
   };
 
@@ -140,7 +140,7 @@ const MeetingTypeList = () => {
           title="Встреча создана"
           handleClick={() => {
             navigator.clipboard.writeText(meetingLink);
-            toast({ title: 'Link Copied' });
+            toast({ title: 'Ссылка скопирована' });
           }}
           image={'/icons/checked.svg'}
           buttonIcon="/icons/copy.svg"
@@ -152,7 +152,7 @@ const MeetingTypeList = () => {
       <MeetingModal
         isOpen={meetingState === 'isJoiningMeeting'}
         onClose={() => setMeetingState(undefined)}
-        title="Type the link here"
+        title="Введите ссылку на приглашение"
         className="text-center"
         buttonText="Присоединиться к встрече"
         handleClick={() => router.push(values.link)}
